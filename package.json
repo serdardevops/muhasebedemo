@@ -1,0 +1,31 @@
+{
+  "name": "muhasebe-demo",
+  "version": "1.0.0",
+  "description": "Küçük ve orta ölçekli işletmeler için web tabanlı ön muhasebe programı",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "start": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start:prod": "npm run start --workspace=backend",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "test": "npm run test --workspace=backend && npm run test --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "muhasebe",
+    "accounting",
+    "invoice",
+    "finance",
+    "small-business"
+  ],
+  "author": "Serdar Selçuk",
+  "license": "MIT"
+} 
